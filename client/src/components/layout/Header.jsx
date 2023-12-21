@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import firebase from '../../firebase.js'
+import Avatar from "react-avatar";
 
 const Header = () => {
     const user = useSelector(state => state.user);
@@ -45,7 +46,13 @@ const Header = () => {
                 ) : (
                     <ul>
                         <li>
-                            {user.displayName}님 방가워요! 🥳
+                            <Link to="/mypage">
+                                <Avatar
+                                    size="30"
+                                    round={true}
+                                    src={user.photoURL}
+                                />{user.displayName}
+                            </Link>님 방가워요! 🥳
                         </li>
                         <li>
                             <Link onClick={(() => LogoutHandler())}>로그아웃</Link>

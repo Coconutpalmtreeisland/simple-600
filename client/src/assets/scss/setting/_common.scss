@@ -47,3 +47,31 @@ section {
     opacity: 1;
     transition: opacity 0.5s;
 }
+
+.mypage {
+    text-align: center;
+    padding: 20px;
+}
+
+.mypage label {
+    padding: 20px;
+}
+
+.mypage input {
+    display: none;
+}
+
+.list__btn {
+    padding: 20px;
+}
+
+.list__btn button {
+    border: 1px solid #000;
+    margin-right: 10px;
+    padding: 10px 20px;
+}
+
+.list__search {
+    border: 1px solid #000;
+    padding: 10px 20px;
+}

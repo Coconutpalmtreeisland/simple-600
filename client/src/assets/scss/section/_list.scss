@@ -66,18 +66,7 @@
             font-size: 14px;
             color: rgb(143, 149, 171);
             position: relative;
-            padding-left: 30px;
-
-            &::before {
-                content: '';
-                width: 20px;
-                height: 20px;
-                background-color: rgb(100, 70, 255);
-                position: absolute;
-                left: 0;
-                top: 0;
-                border-radius: 50%;
-            }
+            padding-left: 0px;
         }
     }
 }
