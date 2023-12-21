@@ -43,6 +43,9 @@ error: failed to push some refs to 'https://github.com/repo~':
 `git remote add origin "github.com/your-repo.git"`
 `git push -u origin master`
 
+
+- error: remote origin already exists.
+`git remote remove origin`
 ## 초기 설정
 - 디렉토리 생성   
     > mkdir client      
