@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const app = express();
 // 배포할 때
 const port = process.env.PORT || 5050;
-const config = require("./config/key.js");
+const config = require("./server/config/key.js");
 
 app.use(express.static(path.join(__dirname, "./client/build")));
 app.use("/image", express.static("./image"));
