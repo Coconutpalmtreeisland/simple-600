@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 // Express 애플리케이션 생성
 const app = express();
 // 배포할 때
-const port = process.env.PORT || 5050;
+const port = process.env.PORT || 2020;
 const config = require("./server/config/key.js");
 
 // 정적 파일 제공 및 JSON 및 URL 인코딩 처리를 위한 미들웨어 설정
