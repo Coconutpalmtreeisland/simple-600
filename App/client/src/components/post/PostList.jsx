@@ -7,6 +7,7 @@ import moment from "moment";
 import "moment/locale/ko";
 
 const PostList = () => {
+    // postList 상태: useState 훅을 사용하여 컴포넌트의 상태로 postList를 선언하고, 초기값은 빈 배열([])로 설정합니다.
     const [postList, setPostList] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [sort, setSort] = useState("최신순");
@@ -26,9 +27,13 @@ const PostList = () => {
             searchTerm: searchTerm,
         }
 
+        // axios.post: 서버에 POST 요청을 보내고, 성공하면 응답 데이터를 확인하여 postList 상태를 업데이트합니다.
+        // axios를 사용하여 서버에 POST 요청을 보냄
         axios.post("/api/post/list", body)
             .then((response) => {
+                // 서버 응답 데이터에서 success가 true인 경우
                 if (response.data.success) {
+                    // postList 상태를 응답에서 받은 postList로 업데이트
                     setPostList([...response.data.postList]);
                 }
             })
@@ -37,9 +42,10 @@ const PostList = () => {
             })
     }
 
+    // useEffect 훅: 컴포넌트가 렌더링된 후에 실행되는 훅입니다. 서버에 POST 요청을 보내고 응답을 처리합니다.
     useEffect(() => {
         getPostList();
-    }, [sort])
+    }, [sort])  // useEffect의 두 번째 인자로 sort를 전달하여 한 번만 실행되도록 설정.
 
 
     const SearchHandler = () => {
@@ -71,6 +77,8 @@ const PostList = () => {
             </div>
 
             <div className='list__wrap'>
+                {/* postList.map: postList 상태를 매핑하여 각 게시물의 정보를 화면에 출력합니다. */}
+                {/* key 속성: 리액트에서 배열을 매핑할 때 각 항목에 고유한 key 속성을 제공하는 것이 좋습니다. 여기서는 배열의 인덱스를 key로 사용합니다. */}
                 {postList.map((post, key) => {
                     console.log(post)
                     return (

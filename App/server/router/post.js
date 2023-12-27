@@ -9,6 +9,7 @@ const { User } = require("../model/User.js");
 // 이미지 업로드
 const setUpload = require("../util/upload.js");
 
+// "/api/post.." 경로로 POST 요청이 오면 처리
 // 글 쓰기
 router.post("/write", (req, res) => {
     let temp = {

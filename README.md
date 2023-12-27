@@ -62,7 +62,7 @@ error: failed to push some refs to 'https://github.com/repo~':
     //웹사이트에서 다양한 페이지를 쉽게 구현할 수 있게 해주는 라이브러리  
     npm install react-router-dom  
 
-    // HTTP 요청을 쉽게 보낼 수 있게 해주는 라이브러리  
+    // 클라이언트와 서버 간의 HTTP 통신을 도와주는 라이브러리  
     npm install axios  
 
     // 프록시?? 설정을 쉽게 해주는 라이브러리  
@@ -145,6 +145,12 @@ app.get("/", (req, res) => {
     res.send("Hello World") // JSON 응답
 })
 ```
+## axios
+서버에 HTTP 요청을 보내고 응답을 받아오는 역할
+axios를 사용하여 서버에 POST 요청을 보내고, 서버에서 받은 응답을 처리하여 화면에 표시
+서버에 데이터를 보내거나 서버로부터 데이터를 받아올 때 사용
+이를 통해 비동기적인 데이터 통신을 간편하게 처리
+
 ## mongoose
 Database Access - readWriteAnyDatabase로 설정
 Network Access - 0.0.0.0/0로 설정
@@ -287,7 +293,11 @@ root.render(
 
 ```
 
-### 3. 
+### 3. proxy-middleware
+ - 다른 서버로의 HTTP 요청을 중개하고 프록시하는 데 사용되는 미들웨어입니다. 주로 개발 중에 로컬 개발 서버에서 API 서버와 같은 백엔드 서버로의 요청을 프록시할 때 유용하게 사용됩니다.
+ 일반적으로, 프론트엔드와 백엔드 서버가 각각 다른 포트에서 실행 중일 때, CORS(Cross-Origin Resource Sharing) 문제로 인해 브라우저에서 직접 요청을 보낼 경우 문제가 발생할 수 있습니다. 이런 경우에 proxy-middleware를 사용하여 프론트엔드 개발 서버에서 백엔드 서버로의 요청을 중개할 수 있습니다. 
+ proxy-middleware를 사용하면 프록시 설정을 통해 특정 경로로 들어오는 요청을 다른 서버로 전달할 수 있습니다. 예를 들어, 개발 중인 프론트엔드 애플리케이션에서 /api 경로로 들어오는 요청을 백엔드 서버로 프록시하고 싶은 경우에 사용할 수 있습니다.
+ 
 - client의 index.js 파일과 같은 위치에 setupProxy.js 생성 클라이어튼 서버 통신
 ```javascript
 const { createProxyMiddleware } = require('http-proxy-middleware');

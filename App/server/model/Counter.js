@@ -6,7 +6,7 @@ const countSchema = new mongoose.Schema(
         postNum: Number,
         userNum: Number,
     },
-    { collection: "counter" }
+    { collection: "counter" }   // 필드 이름 설정
 );
 
 const Counter = mongoose.model("Counter", countSchema);
